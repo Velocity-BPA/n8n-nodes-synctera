@@ -1,0 +1,108 @@
+/*
+ * Copyright (c) Velocity BPA, LLC
+ * Licensed under the Business Source License 1.1
+ * Commercial use requires a separate commercial license.
+ * See LICENSE file for details.
+ */
+
+/**
+ * Synctera Verification Types Constants
+ * Types and statuses for KYC/KYB verification processes
+ */
+
+/**
+ * Verification Types
+ */
+export const VERIFICATION_TYPES = {
+	KYC: 'KYC',
+	KYB: 'KYB',
+	ID_VERIFICATION: 'ID_VERIFICATION',
+	ADDRESS_VERIFICATION: 'ADDRESS_VERIFICATION',
+	DOCUMENT_VERIFICATION: 'DOCUMENT_VERIFICATION',
+	BANK_ACCOUNT_VERIFICATION: 'BANK_ACCOUNT_VERIFICATION',
+	PHONE_VERIFICATION: 'PHONE_VERIFICATION',
+	EMAIL_VERIFICATION: 'EMAIL_VERIFICATION',
+} as const;
+
+export type VerificationType = typeof VERIFICATION_TYPES[keyof typeof VERIFICATION_TYPES];
+
+/**
+ * Verification Statuses
+ */
+export const VERIFICATION_STATUSES = {
+	PENDING: 'PENDING',
+	IN_PROGRESS: 'IN_PROGRESS',
+	PASSED: 'PASSED',
+	FAILED: 'FAILED',
+	EXPIRED: 'EXPIRED',
+	CANCELLED: 'CANCELLED',
+	MANUAL_REVIEW: 'MANUAL_REVIEW',
+	PROVISIONAL: 'PROVISIONAL',
+} as const;
+
+export type VerificationStatus = typeof VERIFICATION_STATUSES[keyof typeof VERIFICATION_STATUSES];
+
+/**
+ * Verification Providers
+ */
+export const VERIFICATION_PROVIDERS = {
+	SOCURE: 'SOCURE',
+	ALLOY: 'ALLOY',
+	PLAID: 'PLAID',
+	MIDDESK: 'MIDDESK',
+	PERSONA: 'PERSONA',
+	JUMIO: 'JUMIO',
+	ONFIDO: 'ONFIDO',
+} as const;
+
+export type VerificationProvider = typeof VERIFICATION_PROVIDERS[keyof typeof VERIFICATION_PROVIDERS];
+
+/**
+ * Document Types for Verification
+ */
+export const VERIFICATION_DOCUMENT_TYPES = {
+	DRIVERS_LICENSE: 'DRIVERS_LICENSE',
+	PASSPORT: 'PASSPORT',
+	STATE_ID: 'STATE_ID',
+	NATIONAL_ID: 'NATIONAL_ID',
+	RESIDENCE_PERMIT: 'RESIDENCE_PERMIT',
+	UTILITY_BILL: 'UTILITY_BILL',
+	BANK_STATEMENT: 'BANK_STATEMENT',
+	TAX_DOCUMENT: 'TAX_DOCUMENT',
+	ARTICLES_OF_INCORPORATION: 'ARTICLES_OF_INCORPORATION',
+	EIN_CONFIRMATION: 'EIN_CONFIRMATION',
+} as const;
+
+export type VerificationDocumentType = typeof VERIFICATION_DOCUMENT_TYPES[keyof typeof VERIFICATION_DOCUMENT_TYPES];
+
+/**
+ * Verification Failure Reasons
+ */
+export const VERIFICATION_FAILURE_REASONS = {
+	DOCUMENT_EXPIRED: 'DOCUMENT_EXPIRED',
+	DOCUMENT_UNREADABLE: 'DOCUMENT_UNREADABLE',
+	DOCUMENT_MISMATCH: 'DOCUMENT_MISMATCH',
+	IDENTITY_MISMATCH: 'IDENTITY_MISMATCH',
+	ADDRESS_MISMATCH: 'ADDRESS_MISMATCH',
+	SSN_MISMATCH: 'SSN_MISMATCH',
+	DOB_MISMATCH: 'DOB_MISMATCH',
+	FRAUD_DETECTED: 'FRAUD_DETECTED',
+	WATCHLIST_HIT: 'WATCHLIST_HIT',
+	INSUFFICIENT_DATA: 'INSUFFICIENT_DATA',
+	TIMEOUT: 'TIMEOUT',
+	SYSTEM_ERROR: 'SYSTEM_ERROR',
+} as const;
+
+export type VerificationFailureReason = typeof VERIFICATION_FAILURE_REASONS[keyof typeof VERIFICATION_FAILURE_REASONS];
+
+/**
+ * Risk Levels
+ */
+export const RISK_LEVELS = {
+	LOW: 'LOW',
+	MEDIUM: 'MEDIUM',
+	HIGH: 'HIGH',
+	VERY_HIGH: 'VERY_HIGH',
+} as const;
+
+export type RiskLevel = typeof RISK_LEVELS[keyof typeof RISK_LEVELS];
